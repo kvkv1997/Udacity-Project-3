@@ -18,7 +18,7 @@ script:
     - docker build -t udagram-frontend ./udagram-frontend
 
     # Tagging
-    - docker tag udagram-reverseproxy tunguyen1608/reverseproxy:v1
+    - docker tag reverseproxy tunguyen1608/reverseproxy:v1
     - docker tag udagram-api-feed tunguyen1608/udagram-api-feed:v1
     - docker tag udagram-api-user tunguyen1608/udagram-api-user:v1
     - docker tag udagram-frontend tunguyen1608/udagram-frontend:v1
