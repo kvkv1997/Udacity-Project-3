@@ -25,7 +25,7 @@ script:
 
 after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-    - docker push tunguyen1608/reverseproxy:v1
+    - docker push tunguyen1608/reverseproxy:v2
     - docker push tunguyen1608/udagram-api-feed:v1
     - docker push tunguyen1608/udagram-api-user:v1
     - docker push tunguyen1608/udagram-frontend:v1
