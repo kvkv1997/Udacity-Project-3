@@ -4,10 +4,13 @@ metadata:
   name: backend-feed
   labels:
     app: backend-feed
+    role: feed
+    tier: backend
 spec:
   ports:
-    - port: 8080
-      targetPort: 8080
-      protocol: TCP
+  - port: 8080
+    targetPort: 8080
   selector:
     app: backend-feed
+    role: feed
+    tier: backend

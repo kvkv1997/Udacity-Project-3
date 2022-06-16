@@ -4,8 +4,10 @@ metadata:
   name: backend-feed
   labels:
     app: backend-feed
+    role: feed
+    tier: backend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend-feed
@@ -13,73 +15,74 @@ spec:
     metadata:
       labels:
         app: backend-feed
+        role: feed
+        tier: backend
     spec:
       containers:
-        - name: backend-feed
-          image: tunguyen1608/udagram-api-feed:v1
-          imagePullPolicy: Always
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "250m"
-            limits:
-              memory: "2048Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 8080
-          env:
-            - name: POSTGRES_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: secret
-                  key: POSTGRES_USERNAME
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: secret
-                  key: POSTGRES_PASSWORD
-            - name: POSTGRES_DB
-              valueFrom:
-                configMapKeyRef:
-                  name: configmap
-                  key: POSTGRES_DB
-            - name: POSTGRES_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: configmap
-                  key: POSTGRES_HOST
-            - name: AWS_REGION
-              valueFrom:
-                configMapKeyRef:
-                  name: configmap
-                  key: AWS_REGION
-            - name: AWS_PROFILE
-              valueFrom:
-                configMapKeyRef:
-                  name: configmap
-                  key: AWS_PROFILE
-            - name: AWS_BUCKET
-              valueFrom:
-                configMapKeyRef:
-                  name: configmap
-                  key: AWS_BUCKET
-            - name: AWS_ACCESS_KEY_ID
-              valueFrom:
-                secretKeyRef:
-                  name: aws-secret
-                  key: aws_access_key_id
-            - name: AWS_SECRET_ACCESS_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: aws-secret
-                  key: aws_secret_access_key
-            - name: URL
-              valueFrom:
-                configMapKeyRef:
-                  name: configmap
-                  key: URL
-            - name: JWT_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: secret
-                  key: JWT_SECRET
+      - image: tunguyen1608/udagram-api-feed:v1
+        name: backend-feed
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            memory: 2Gi
+            cpu: 1
+          requests:
+            memory: 1Gi
+            cpu: 0.5
+        env:
+          - name: POSTGRES_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: POSTGRES_USERNAME
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: POSTGRES_PASSWORD
+          - name: POSTGRES_DB
+            valueFrom:
+              configMapKeyRef:
+                name: configmap
+                key: POSTGRES_DB
+          - name: POSTGRES_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: configmap
+                key: POSTGRES_HOST
+          - name: AWS_REGION
+            valueFrom:
+              configMapKeyRef:
+                name: configmap
+                key: AWS_REGION
+          - name: AWS_PROFILE
+            valueFrom:
+              configMapKeyRef:
+                name: configmap
+                key: AWS_PROFILE
+          - name: AWS_BUCKET
+            valueFrom:
+              configMapKeyRef:
+                name: configmap
+                key: AWS_BUCKET
+          - name: AWS_ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: aws-secret
+                key: aws_access_key_id
+          - name: AWS_SECRET_ACCESS_KEY
+            valueFrom:
+              secretKeyRef:
+                name: aws-secret
+                key: aws_secret_access_key
+          - name: URL
+            valueFrom:
+              configMapKeyRef:
+                name: configmap
+                key: URL
+          - name: JWT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: secret
+                key: JWT_SECRET
