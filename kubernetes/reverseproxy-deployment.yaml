@@ -16,13 +16,13 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: tunguyen1608/reverseproxy:v8
+          image: tunguyen1608/reverseproxy:v9
           imagePullPolicy: Always
           resources:
             requests:
               memory: "64Mi"
               cpu: "250m"
-            limits:
+            limits:kube
               memory: "1024Mi"
               cpu: "500m"
           ports:
