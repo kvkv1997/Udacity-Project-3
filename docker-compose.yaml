@@ -13,7 +13,7 @@ services:
             AWS_PROFILE: $AWS_PROFILE
             AWS_BUCKET: $AWS_BUCKET
             JWT_SECRET: $JWT_SECRET
-            URL: "http://localhost:8100"
+            URL: "http://localhost:8080"
     udagram-backend-feed:
         build:
             context: ./udagram-api-feed
@@ -29,7 +29,7 @@ services:
             AWS_PROFILE: $AWS_PROFILE
             AWS_BUCKET: $AWS_BUCKET
             JWT_SECRET: $JWT_SECRET
-            URL: "http://localhost:8100"
+            URL: "http://localhost:8080"
     udagram-reverseproxy:
         build:
             context: ./udagram-reverseproxy
