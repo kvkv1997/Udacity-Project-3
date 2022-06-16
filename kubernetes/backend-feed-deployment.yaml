@@ -19,7 +19,7 @@ spec:
         tier: backend
     spec:
       containers:
-      - image: tunguyen1608/udagram-api-feed:v1
+      - image: tunguyen1608/udagram-api-feed:v2
         name: backend-feed
         ports:
         - containerPort: 8080

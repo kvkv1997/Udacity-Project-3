@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: tunguyen1608/reverseproxy:v6
+          image: tunguyen1608/reverseproxy:v8
           imagePullPolicy: Always
           resources:
             requests:
