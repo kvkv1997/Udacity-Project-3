@@ -15,7 +15,7 @@ spec:
         service: frontend
     spec:
       containers:
-        - image: tunguyen1608/udagram-frontend:v8
+        - image: tunguyen1608/udagram-frontend:v9
           name: frontend
           imagePullPolicy: Always
           resources:
