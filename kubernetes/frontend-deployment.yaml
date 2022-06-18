@@ -15,7 +15,7 @@ spec:
         service: frontend
     spec:
       containers:
-        - image: tunguyen1608/udagram-frontend:v9
+        - image: tunguyen1608/udagram-frontend:v10
           name: frontend
           imagePullPolicy: Always
           resources:
@@ -24,9 +24,7 @@ spec:
               cpu: "250m"
             limits:
               memory: "2048Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 80    
+              cpu: "500m"   
           env:
             - name: URL
               valueFrom:
