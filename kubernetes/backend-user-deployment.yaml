@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: backend-user
   labels:
-    app: backend-user
+    service: backend-user
     role: user
     tier: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-user
+      service: backend-user
   template:
     metadata:
       labels:
-        app: backend-user
+        service: backend-user
         role: user
         tier: backend
     spec:

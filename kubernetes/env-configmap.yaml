@@ -3,10 +3,10 @@ kind: ConfigMap
 metadata:
     name: configmap
 data: 
-    POSTGRES_HOST: liem-database-1.ceuylvtzmp2o.us-east-1.rds.amazonaws.com
+    POSTGRES_HOST: liam-database-dev.ch8kefkou8nj.us-east-1.rds.amazonaws.com
     POSTGRES_DB: postgres
 
-    AWS_BUCKET: liampj3-325206099771-dev
+    AWS_BUCKET: liam-479190782119-bucket
     AWS_REGION: us-east-1
     AWS_PROFILE: default
     

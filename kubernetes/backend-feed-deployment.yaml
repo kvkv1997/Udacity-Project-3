@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: backend-feed
   labels:
-    app: backend-feed
+    service: backend-feed
     role: feed
     tier: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-feed
+      service: backend-feed
   template:
     metadata:
       labels:
-        app: backend-feed
+        service: backend-feed
         role: feed
         tier: backend
     spec:
