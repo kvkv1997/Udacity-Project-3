@@ -10,4 +10,5 @@ data:
     AWS_REGION: us-east-1
     AWS_PROFILE: default
     
-    URL: http://a3e9cb919063f4b978a66cc995ba5b3c-1397562034.us-east-1.elb.amazonaws.com:8080
+    
+    URL: localhost:8080
