@@ -11,4 +11,4 @@ data:
     AWS_PROFILE: default
     
     
-    URL: localhost:8080
+    URL: a11b5a0750b4b4719bac8a9f2b23c20e-86505154.us-east-1.elb.amazonaws.com:8100

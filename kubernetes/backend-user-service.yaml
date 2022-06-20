@@ -4,13 +4,9 @@ metadata:
   name: backend-user
   labels:
     app: backend-user
-    role: user
-    tier: backend
 spec:
   ports:
   - port: 8080
-    targetPort: 8080
+    protocol: TCP
   selector:
     app: backend-user
-    role: user
-    tier: backend

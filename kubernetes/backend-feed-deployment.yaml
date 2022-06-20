@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-feed
   labels:
-    app: backend-feed
+    service: backend-feed
 spec:
   replicas: 1
   selector:
