@@ -16,7 +16,7 @@ spec:
         api: external
     spec:
       containers:
-        - image: tunguyen1608/udagram-frontend:v16
+        - image: tunguyen1608/udagram-frontend:v17
           name: udagram-frontend
           imagePullPolicy: Always
           ports:
