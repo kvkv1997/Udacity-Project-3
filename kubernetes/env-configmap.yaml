@@ -11,4 +11,5 @@ data:
   AWS_BUCKET: liam-479190782119-bucket
 
 
-  URL: http://localhost:8080
+  URL: http://localhost:8100
+
