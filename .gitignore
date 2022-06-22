@@ -40,3 +40,11 @@ venv/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+#travis
+.travis.yml
+docker-compose.yaml
+docker-compose-build.yaml
+set_env.sh
+udagram-api.postman_collection.json
+

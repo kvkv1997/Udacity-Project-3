@@ -1,7 +1,8 @@
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: backend-feed-hpa
+  name: backend-user-hpa
+  namespace: default
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
@@ -9,4 +10,10 @@ spec:
     name: backend-user
   minReplicas: 1
   maxReplicas: 2
-  targetCPUUtilizationPercentage: 50
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50  
