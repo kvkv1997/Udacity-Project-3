@@ -8,7 +8,7 @@ data:
   
   AWS_REGION: us-east-1
   AWS_PROFILE: default
-  AWS_BUCKET: liam-479190782119-bucket
+  AWS_BUCKET: liam-479190782119-dev
 
 
   URL: http://a7ed48ee7f10c4263a0ce662a097d189-962715078.us-east-1.elb.amazonaws.com:8100
